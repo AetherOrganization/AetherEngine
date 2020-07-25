@@ -86,7 +86,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <OutDir>$(SolutionDir)#out\$(Configuration)\$(ProjectName)\$(PlatformTarget)\</OutDir>
-    <TargetName>AetherEngine</TargetName>
+    <TargetName>libAetherEngine</TargetName>
   </PropertyGroup>
   <ItemGroup>
   </ItemGroup>
