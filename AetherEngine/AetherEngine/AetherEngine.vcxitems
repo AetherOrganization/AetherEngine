@@ -14,9 +14,11 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Test.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Test.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MemLeakDetection\MemoryTracker.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Dev\Test.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,2 @@
+[212_20:16:45] <T:Main> (INFO) Logger Initialized
+[212_20:16:45] <T:Main> (DEBUG) Heyoo world! This is an example of a memory leak!

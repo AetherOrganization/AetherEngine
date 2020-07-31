@@ -1,10 +1,7 @@
-robocopy "%1" "../#in/Import/Bin" *.dll /IT /IM
-if %ERRORLEVEL% GEQ 8 goto failed
-robocopy "%1" "../#in/Import/Lib" *.so /IT /IM
-if %ERRORLEVEL% GEQ 8 goto failed
-robocopy "%1" "../#in/Import/Lib" *.lib /IT /IM
-if %ERRORLEVEL% GEQ 8 goto failed
-robocopy "../AetherEngine" "../#in/Import/#RawInclude" *.h /IT /IM
+rmdir /s /q "%2"
+mkdir "%2"
+
+robocopy "../AetherEngine/Src" "%2" *.h /IT /IM /S
 if %ERRORLEVEL% GEQ 8 goto failed
 
 exit 0

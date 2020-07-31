@@ -15,7 +15,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinuxTest", "LinuxTest\Linu
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AetherEngine\AetherEngine.vcxitems*{0fbba255-adf7-48ad-8809-a8b8a51b7a2f}*SharedItemsImports = 4
 		AetherEngine\AetherEngine.vcxitems*{6319b2ab-5bfd-4bfa-bd22-2660b7b2f4d1}*SharedItemsImports = 9
+		AetherEngine\AetherEngine.vcxitems*{a7771eeb-89fe-4d5d-b820-12d68231e0c4}*SharedItemsImports = 4
 		AetherEngine\AetherEngine.vcxitems*{c87fe794-09b4-4143-839b-68cee95ff94c}*SharedItemsImports = 4
 		AetherEngine\AetherEngine.vcxitems*{edb79ab6-c255-4939-ad2b-a21f910c233f}*SharedItemsImports = 4
 	EndGlobalSection
@@ -24,6 +26,10 @@ Global
 		Debug|ARM64 = Debug|ARM64
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		DebugMemLeak|ARM = DebugMemLeak|ARM
+		DebugMemLeak|ARM64 = DebugMemLeak|ARM64
+		DebugMemLeak|x64 = DebugMemLeak|x64
+		DebugMemLeak|x86 = DebugMemLeak|x86
 		Release|ARM = Release|ARM
 		Release|ARM64 = Release|ARM64
 		Release|x64 = Release|x64
@@ -42,6 +48,18 @@ Global
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Debug|x86.ActiveCfg = Debug|x86
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Debug|x86.Build.0 = Debug|x86
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Debug|x86.Deploy.0 = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM.ActiveCfg = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM.Build.0 = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM.Deploy.0 = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM64.ActiveCfg = Debug|ARM64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM64.Build.0 = Debug|ARM64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|ARM64.Deploy.0 = Debug|ARM64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x64.ActiveCfg = Debug|x64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x64.Build.0 = Debug|x64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x64.Deploy.0 = Debug|x64
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x86.ActiveCfg = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x86.Build.0 = Debug|x86
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.DebugMemLeak|x86.Deploy.0 = Debug|x86
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Release|ARM.ActiveCfg = Release|ARM
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Release|ARM.Build.0 = Release|ARM
 		{EDB79AB6-C255-4939-AD2B-A21F910C233F}.Release|ARM.Deploy.0 = Release|ARM
@@ -60,6 +78,14 @@ Global
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Debug|x64.Build.0 = Debug|x64
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Debug|x86.ActiveCfg = Debug|Win32
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Debug|x86.Build.0 = Debug|Win32
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|ARM.ActiveCfg = Release|Win32
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|ARM.Build.0 = Release|Win32
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|ARM64.ActiveCfg = Release|x64
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|ARM64.Build.0 = Release|x64
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|x64.ActiveCfg = Debug|x64
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|x64.Build.0 = Debug|x64
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|x86.ActiveCfg = Debug|Win32
+		{C87FE794-09B4-4143-839B-68CEE95FF94C}.DebugMemLeak|x86.Build.0 = Debug|Win32
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Release|ARM.ActiveCfg = Release|Win32
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Release|ARM64.ActiveCfg = Release|Win32
 		{C87FE794-09B4-4143-839B-68CEE95FF94C}.Release|x64.ActiveCfg = Release|x64
@@ -72,6 +98,13 @@ Global
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Debug|x64.Build.0 = Debug|x64
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Debug|x86.ActiveCfg = Debug|Win32
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Debug|x86.Build.0 = Debug|Win32
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|ARM.ActiveCfg = DebugMemLeak|Win32
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|ARM.Build.0 = DebugMemLeak|Win32
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|ARM64.ActiveCfg = DebugMemLeak|Win32
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|x64.ActiveCfg = DebugMemLeak|x64
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|x64.Build.0 = DebugMemLeak|x64
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|x86.ActiveCfg = DebugMemLeak|Win32
+		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.DebugMemLeak|x86.Build.0 = DebugMemLeak|Win32
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Release|ARM.ActiveCfg = Release|Win32
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Release|ARM64.ActiveCfg = Release|Win32
 		{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}.Release|x64.ActiveCfg = Release|x64
@@ -90,6 +123,18 @@ Global
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Debug|x86.ActiveCfg = Debug|x86
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Debug|x86.Build.0 = Debug|x86
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Debug|x86.Deploy.0 = Debug|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM.ActiveCfg = DebugMemLeak|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM.Build.0 = DebugMemLeak|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM.Deploy.0 = DebugMemLeak|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM64.ActiveCfg = DebugMemLeak|ARM64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM64.Build.0 = DebugMemLeak|ARM64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|ARM64.Deploy.0 = DebugMemLeak|ARM64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x64.ActiveCfg = DebugMemLeak|x64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x64.Build.0 = DebugMemLeak|x64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x64.Deploy.0 = DebugMemLeak|x64
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x86.ActiveCfg = DebugMemLeak|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x86.Build.0 = DebugMemLeak|x86
+		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.DebugMemLeak|x86.Deploy.0 = DebugMemLeak|x86
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|ARM.ActiveCfg = Release|ARM
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|ARM.Build.0 = Release|ARM
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|ARM.Deploy.0 = Release|ARM
