@@ -341,4 +341,6 @@ healthchecksdb
 
 
 /AetherEngine/#in/Import/#RawInclude
+/**/log.txt
+
 !/AetherEngine/#in/*/Bin
