@@ -134,7 +134,7 @@ void Logger::WriteToBuffer(std::string s, int tag)
 
 	std::string timestr;
 	{
-#ifdef _WIN32
+#ifdef _WINDOWS
 		time_t rawtime;
 		struct tm* timeinfo = new tm();
 		char charbuffer[128];
@@ -143,7 +143,7 @@ void Logger::WriteToBuffer(std::string s, int tag)
 		strftime(charbuffer, sizeof(charbuffer), "%j_%H:%M:%S", timeinfo);
 		delete timeinfo;
 		timestr = std::string(charbuffer);
-#elif defined(__unix__)
+#elif _LINUX
 		time_t rawtime;
 		char charbuffer[128];
 		time(&rawtime);
@@ -187,14 +187,14 @@ void Logger::WriteToLog()
 
 void Logger::PrintColored(int color, std::string s)
 {
-#ifdef WIN32
+#ifdef _WINDOWS
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, color);
 
 	std::cout << s << std::endl;
 
 	SetConsoleTextAttribute(hConsole, 7);
-#elif defined(__unix__) || defined(__APPLE__)
+#elif _LINUX
 	//I don't *think* there is a better way to do the ANSI colors
 	//other than unnecessarily making a map or class to do it
 	switch (color)
