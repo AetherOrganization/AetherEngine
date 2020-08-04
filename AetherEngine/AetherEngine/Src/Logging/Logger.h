@@ -7,6 +7,7 @@
 #include <thread>
 #include <list>
 
+#undef ERROR
 
 class Logger
 {

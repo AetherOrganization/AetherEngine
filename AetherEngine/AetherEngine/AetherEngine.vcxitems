@@ -14,9 +14,11 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\SocketLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\SocketLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MemLeakDetection\MemoryTracker.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Dev\Test.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />

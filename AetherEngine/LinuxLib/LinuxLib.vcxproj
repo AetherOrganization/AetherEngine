@@ -103,6 +103,7 @@
     <ClCompile>
       <PreprocessorDefinitions>_LINUX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CppLanguageStandard>c++17</CppLanguageStandard>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
     </ClCompile>
     <PostBuildEvent>
       <Command>../#buildsteps/post-build_export.bat "$(OutDir)\" "$(SolutionDir)#out\$(Configuration)\RawHeaders"</Command>
