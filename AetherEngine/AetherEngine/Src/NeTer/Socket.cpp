@@ -35,13 +35,14 @@ Socket::Socket()
 
 int Socket::Bind(int Port, const char* IP)
 {
-	struct sockaddr_in serverAddr;
+	struct sockaddr_in ServerAddress;
 
-	serverAddr.sin_family = AF_INET;
-	serverAddr.sin_port = htons(Port);
-	serverAddr.sin_addr.s_addr = inet_addr(IP);
+	ServerAddress.sin_family = AF_INET;
+	ServerAddress.sin_port = htons(Port);
+	InetPton(AF_INET, (PCWSTR)(IP), &ServerAddress.sin_addr.s_addr);
 
-	if (bind(Sock, (SOCKADDR*)&serverAddr, sizeof(serverAddr))) {
+	if (bind(Sock, (SOCKADDR*)&ServerAddress, sizeof(ServerAddress)))
+	{
 		Logger::Log(Logger::ERROR, "bind failed with error: ", WSAGetLastError());
 		return 1;
 	}

@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
 
+#ifdef _WINDOWS
+#include <WinSock2.h>
+#endif
+
 class Socket
 {
 public:
