@@ -1,11 +1,9 @@
 #include <iostream>
 
-#include <Src/Dev/Test.h>
-#include <Src/Logging/Logger.h>
-
 #include <filesystem>
 
-#if _MEMLEAK
+#include <Src/Dev/Test.h>
+#include <Src/Logging/Logger.h>
 #include <Src/Debugging/MemLeakDetection/MemoryTracker.h>
 
 void EvalMemory()
@@ -13,7 +11,6 @@ void EvalMemory()
 	if (memtrack::totalAllocatedMemorySize != 0)
 		DumpUnfreed();
 }
-#endif
 
 struct SomeStruct
 {
@@ -25,8 +22,8 @@ struct SomeStruct
 
 int main()
 {
-#if _MEMLEAK
 	std::atexit(EvalMemory); // Sets up the memory tracker to begin tracking memory and also sets up the evalmemory function to run post-main
+#if _MEMLEAK
 	memtrack::tracking = true;
 #endif
 
