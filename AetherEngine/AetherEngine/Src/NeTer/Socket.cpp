@@ -1,6 +1,5 @@
-/// <summary>Creates a socket if one does not already exist. </summary>
-/// <remarks>Arron Davies, 01-08-2020. </remarks>
-/// <returns>Nothing(self). </returns>
+/// <summary>Creates a socket</summary>
+/// <remarks>Arron Davies, 06-08-2020. </remarks>
 
 #include "Socket.h"
 
