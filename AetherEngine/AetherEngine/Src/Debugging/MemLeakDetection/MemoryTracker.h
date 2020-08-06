@@ -37,7 +37,7 @@ void AddTrack(unsigned int addr, unsigned int size, const char* file, unsigned i
 #if _WINDOWS
 		strncpy_s(info->file, file, 127);
 #else
-		strncpy(info->file, file, 127);
+		//strncpy(info->file, file, 127);
 #endif
 		info->line = line;
 

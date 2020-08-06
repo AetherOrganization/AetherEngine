@@ -4,6 +4,7 @@
 #include <Src/Logging/Logger.h>
 
 #include <filesystem>
+#include "Src/NeTer/Socket.h"
 
 #if _MEMLEAK
 #include <Src/Debugging/MemLeakDetection/MemoryTracker.h>
@@ -38,6 +39,10 @@ int main()
 	{
 		SomeStruct* tmp = new SomeStruct();
 	}
+
+	Socket socket;
+	socket.Bind(25565, "127.0.0.1");
+	socket.Listen();
 
 	return 0;
 }
