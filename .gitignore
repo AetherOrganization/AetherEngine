@@ -339,6 +339,8 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
+/AetherEngine/**/DebugMemLeak
+
 
 /AetherEngine/#in/Import/#RawInclude
 /**/log.txt
