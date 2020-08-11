@@ -132,7 +132,7 @@ public:
 	/// <param name="tag">Tag to use.</param>
 	/// <param name="...args">Variable(s) to print</param>
 	template<class ...Argst>
-	static void Logln(int tag, Argst ...args)
+	static void LogArgln(int tag, Argst ...args)
 	{
 		std::stringstream bufferStream;
 		SubLog(bufferStream, args...);
@@ -148,7 +148,7 @@ public:
 	/// <param name="tag">Tag to use.</param>
 	/// <param name="...args">Variable(s) to print</param>
 	template<class ...Argst>
-	static void Log(int tag, Argst ...args)
+	static void LogArg(int tag, Argst ...args)
 	{
 		std::stringstream bufferStream;
 		SubLog(bufferStream, args...);
