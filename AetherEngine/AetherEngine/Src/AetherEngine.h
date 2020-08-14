@@ -1,8 +1,8 @@
 #pragma once
 
+#include <Src/Logging/Logger.h>
 #include <Src/Debugging/MemLeakDetection/MemoryTracker.h>
 #include <Src/Args/Args.h>
-#include <Src/Logging/Logger.h>
 
 
 /// <summary>

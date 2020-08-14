@@ -32,6 +32,8 @@ Logger::Logger(std::string threadName, char severity)
 	if (instance)
 		throw new std::runtime_error("Attempted to instantiate Logger class twice. This is not allowed as Logger is a singleton.");
 	instance = this;
+	/*std::atexit(memtrack::DumpUnfreed);
+	memtrack::tracking = true;*/
 
 	NameThread(threadName);
 	severityLevel = severity;

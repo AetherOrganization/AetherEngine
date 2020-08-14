@@ -346,3 +346,5 @@ healthchecksdb
 /**/log.txt
 
 !/AetherEngine/#in/*/Bin
+
+!/**/DontGitIgnore.tmp
