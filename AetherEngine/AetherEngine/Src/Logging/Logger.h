@@ -12,6 +12,8 @@
 #include <vulkan/vulkan.h>
 #endif
 
+#undef ERROR
+
 
 /// <summary>
 /// Singleton logger class, inteded to replace std::cout. Adds extra features ontop of regular console logging including logging to a log file.

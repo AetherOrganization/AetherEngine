@@ -15,11 +15,11 @@ void TestStart()
 
 
 int main(int argc, char* argv[])
-{
-	StartAetherEngine(argc, argv);
 #if _MEMLEAK
 	memtrack::tracking = true;
 #endif
+{
+	StartAetherEngine(argc, argv);
 
 	TestStart();
 
