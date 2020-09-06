@@ -14,15 +14,14 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Debugging\MemLeakDetection\MemoryTracker.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\AetherEngine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MemLeakDetection\MemoryTracker.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Dev\Test.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
   </ItemGroup>
 </Project>

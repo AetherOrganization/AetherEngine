@@ -136,6 +136,9 @@
     <PostBuildEvent>
       <Command>../#buildsteps/post-build_import.bat "dll" "$(OutDir)\"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>../#buildsteps/pre-build_MakeWD.bat "$(LocalDebuggerWorkingDirectory)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemLeak|Win32'">
     <ClCompile>
@@ -155,6 +158,9 @@
     <PostBuildEvent>
       <Command>../#buildsteps/post-build_import.bat "dll" "$(OutDir)\"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>../#buildsteps/pre-build_MakeWD.bat "$(LocalDebuggerWorkingDirectory)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -178,6 +184,9 @@
     <PostBuildEvent>
       <Command>../#buildsteps/post-build_import.bat "dll" "$(OutDir)\"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>../#buildsteps/pre-build_MakeWD.bat "$(LocalDebuggerWorkingDirectory)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

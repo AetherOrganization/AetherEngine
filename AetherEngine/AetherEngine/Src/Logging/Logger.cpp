@@ -15,8 +15,10 @@
 #pragma region Static Decleration
 Logger* Logger::instance;
 
-std::unordered_map<int, std::string> Logger::tagStringMap;
-std::unordered_map<int, int> Logger::tagColorMap;
+char Logger::severityLevel;
+bool Logger::addTags = true;
+
+std::unordered_map<int, Logger::TagData*> Logger::tagDataMap;
 std::unordered_map<std::thread::id, std::string> Logger::threadNameMap;
 
 std::list<std::string> Logger::buffer;
@@ -25,54 +27,33 @@ std::chrono::steady_clock::time_point Logger::nextWriteTime;
 std::mutex Logger::lock;
 #pragma endregion
 
-Logger::Logger()
+Logger::Logger(std::string threadName, char severity)
 {
 	if (instance)
 		throw new std::runtime_error("Attempted to instantiate Logger class twice. This is not allowed as Logger is a singleton.");
 	instance = this;
-
-	std::ofstream logfile("log.txt");
-	logfile.close();
-
-	RegisterNewTag(OTHER, "");
-	RegisterNewTag(INFO, "INFO");
-	RegisterNewTag(WARNING, "WARNING", COLOR_BRIGHT_YELLOW);
-	RegisterNewTag(ERROR, "ERROR", COLOR_BRIGHT_RED);
-	RegisterNewTag(EXCEPTION, "ERROR", COLOR_BRIGHT_RED);
-	RegisterNewTag(DEBUG, "DEBUG", COLOR_BRIGHT_CYAN);
-
-
-	nextWriteTime = std::chrono::steady_clock::now() + std::chrono::seconds(2);
-
-	std::atexit(HandleExit);
-
-	Log("Logger Initialized", INFO);
-}
-
-Logger::Logger(std::string threadName)
-{
-	if (instance)
-		throw new std::runtime_error("Attempted to instantiate Logger class twice. This is not allowed as Logger is a singleton.");
-	instance = this;
+	/*std::atexit(memtrack::DumpUnfreed);
+	memtrack::tracking = true;*/
 
 	NameThread(threadName);
+	severityLevel = severity;
 
 	std::ofstream logfile("log.txt");
 	logfile.close();
 
-	RegisterNewTag(OTHER, "");
-	RegisterNewTag(INFO, "INFO");
-	RegisterNewTag(WARNING, "WARNING", COLOR_BRIGHT_YELLOW);
-	RegisterNewTag(ERROR, "ERROR", COLOR_BRIGHT_RED);
-	RegisterNewTag(EXCEPTION, "ERROR", COLOR_BRIGHT_RED);
-	RegisterNewTag(DEBUG, "DEBUG", COLOR_BRIGHT_CYAN);
+	RegisterNewTag(OTHER, "", COLOR_WHITE, 3);
+	RegisterNewTag(INFO, "INFO", COLOR_WHITE, 3);
+	RegisterNewTag(WARNING, "WARNING", COLOR_BRIGHT_YELLOW, 2);
+	RegisterNewTag(ERROR, "ERROR", COLOR_BRIGHT_RED, 1);
+	RegisterNewTag(EXCEPTION, "ERROR", COLOR_BRIGHT_RED, 1);
+	RegisterNewTag(DEBUG, "DEBUG", COLOR_BRIGHT_CYAN, 4);
 
 
 	nextWriteTime = std::chrono::steady_clock::now() + std::chrono::seconds(2);
 
 	std::atexit(HandleExit);
 
-	Log("Logger Initialized", INFO);
+	Logln("Logger Initialized", INFO);
 }
 
 Logger::~Logger()
@@ -81,23 +62,27 @@ Logger::~Logger()
 
 	std::lock_guard<std::mutex> lk(lock);
 
-	tagStringMap.clear();
-	tagColorMap.clear();
-	threadNameMap.clear();
+	for (const auto data : tagDataMap)
+	{
+		delete data.second;
+	}
 }
 
-bool Logger::RegisterNewTag(int tagId, std::string tagString, int tagColor)
+bool Logger::RegisterNewTag(int tagId, std::string tagString, Logger::LoggerColors tagColor, char tagSeverity)
 {
 	std::lock_guard<std::mutex> lk(lock);
 
-	if (tagStringMap.find(tagId) != tagStringMap.end())
+	if (tagDataMap.find(tagId) != tagDataMap.end())
 	{
-		//TODO: Implement error output when tags clash with other tags. Perhaps only warning level, not error level.
-		WriteToBuffer("Tag already exists: " + tagId, Logger::ERROR);
+		WriteToBuffer("Tag already exists: " + std::to_string(tagId) + "\n", Logger::ERROR);
 		return false;
 	}
-	tagStringMap[tagId] = tagString;
-	tagColorMap[tagId] = tagColor;
+	TagData* data = new TagData();
+	data->name = tagString;
+	data->color = tagColor;
+	data->severity = tagSeverity;
+
+	tagDataMap[tagId] = data;
 	return true;
 }
 
@@ -110,78 +95,103 @@ void Logger::NameThread(std::string name)
 
 void Logger::HandleExit()
 {
+	nextWriteTime = std::chrono::steady_clock::now() - std::chrono::seconds(2);
 	WriteToLog();
 }
 
 void Logger::Log(std::string s, int tag)
 {
-#if not _DEBUG
-	return;
-#endif
-
 	std::lock_guard<std::mutex> lk(lock);
 
+	if (tagDataMap.find(tag) == tagDataMap.end())
+		tag = 0;
+
 	WriteToBuffer(s, tag);
+	addTags = false;
 
 	if (tag == EXCEPTION)
+	{
+		HandleExit();
 		throw new std::runtime_error(s);
+	}
+}
+
+void Logger::Logln(std::string s, int tag)
+{
+	std::lock_guard<std::mutex> lk(lock);
+
+	if (tagDataMap.find(tag) == tagDataMap.end())
+		tag = 0;
+
+	WriteToBuffer(s + '\n', tag);
+
+	if (tag == EXCEPTION)
+	{
+		HandleExit();
+		throw new std::runtime_error(s);
+	}
 }
 
 void Logger::WriteToBuffer(std::string s, int tag)
 {
-	if (tagStringMap.find(tag) == tagStringMap.end())
-		tag = 0;
-
-	std::string timestr;
+	if (addTags)
 	{
+		std::string timestr;
+		{
 #ifdef _WINDOWS
-		time_t rawtime;
-		struct tm* timeinfo = new tm();
-		char charbuffer[128];
-		time(&rawtime);
-		localtime_s(timeinfo, &rawtime);
-		strftime(charbuffer, sizeof(charbuffer), "%j_%H:%M:%S", timeinfo);
-		delete timeinfo;
-		timestr = std::string(charbuffer);
+			time_t rawtime;
+			struct tm* timeinfo = new tm();
+			char charbuffer[128];
+			time(&rawtime);
+			localtime_s(timeinfo, &rawtime);
+			strftime(charbuffer, sizeof(charbuffer), "%j_%H:%M:%S", timeinfo);
+			delete timeinfo;
+			timestr = std::string(charbuffer);
 #elif _LINUX
-		time_t rawtime;
-		char charbuffer[128];
-		time(&rawtime);
-		struct tm* timeinfo = localtime(&rawtime);
-		strftime(charbuffer, sizeof(charbuffer), "%j_%H:%M:%S", timeinfo);
-		timestr = std::string(charbuffer);
+			time_t rawtime;
+			char charbuffer[128];
+			time(&rawtime);
+			struct tm* timeinfo = localtime(&rawtime);
+			strftime(charbuffer, sizeof(charbuffer), "%j_%H:%M:%S", timeinfo);
+			timestr = std::string(charbuffer);
 #endif
+		}
+
+		std::string threadstr;
+		if (threadNameMap.find(std::this_thread::get_id()) != threadNameMap.end())
+			threadstr = threadNameMap[std::this_thread::get_id()];
+		else
+			threadstr = "Unnamed Thread";
+
+		std::string tagstr = tagDataMap[tag]->name;
+
+		if (tagstr == "")
+			s = "[" + timestr + "] <T:" + threadstr + "> " + s;
+		else
+			s = "[" + timestr + "] <T:" + threadstr + "> (" + tagstr + ") " + s;
 	}
-
-	std::string threadstr;
-	if (threadNameMap.find(std::this_thread::get_id()) != threadNameMap.end())
-		threadstr = threadNameMap[std::this_thread::get_id()];
 	else
-		threadstr = "Unnamed Thread";
+		addTags = true;
 
-	std::string tagstr = tagStringMap[tag];
+	if (tagDataMap[tag]->severity <= severityLevel)
+		PrintColored(tagDataMap[tag]->color, s);
 
-	std::string out;
-	if (tagstr == "")
-		out = "[" + timestr + "] <T:" + threadstr + "> " + s;
-	else
-		out = "[" + timestr + "] <T:" + threadstr + "> (" + tagstr + ") " + s;
+	buffer.push_back(s);
 
-	PrintColored(tagColorMap[tag], out);
-
-	buffer.push_back(out);
-
-	if (std::chrono::steady_clock::now() >= nextWriteTime)
-		WriteToLog();
+	WriteToLog();
 }
 
 void Logger::WriteToLog()
 {
+	if (std::chrono::steady_clock::now() < nextWriteTime)
+		return;
+
 	std::ofstream logfile("log.txt", std::ios::ios_base::app);
 	for (std::string str : buffer)
 		logfile << str << std::endl;
 	logfile.close();
 	buffer.clear();
+	std::cout.flush();
 	nextWriteTime = std::chrono::steady_clock::now() + std::chrono::seconds(2);
 }
 
@@ -191,7 +201,7 @@ void Logger::PrintColored(int color, std::string s)
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, color);
 
-	std::cout << s << std::endl;
+	std::cout << s;
 
 	SetConsoleTextAttribute(hConsole, 7);
 #elif _LINUX
