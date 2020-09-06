@@ -15,3 +15,8 @@ The `master` branch is reserved for finished release versions.
 The `pre-build` branch is reserved as a "development" branch, in which finished branches merge into.
 Before merging into `pre-build`, you should preferably consult the team.
 Before merging into master you should DEFINITELY consult the team.
+
+## Code Conventions
+### <ins>Namespaces
+All of the code should be within the `Aeth` namespace (short for Aether).
+The project is set up with a folder structure instead of using vcxproject filters. The namespaces should reflect the folders they are in. For example `src/Foo/Bar/Baz.cpp` should have all of its code in the `Aeth::Foo::Bar` namespace unless it is agreed that a certain section should be different.
