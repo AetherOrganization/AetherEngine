@@ -1,8 +1,8 @@
 #include <iostream>
 #include <filesystem>
 
-#include <Src/AetherEngine.h>
-#include <Src/Logging/Logger.h>
+#include "../../AetherEngine/Src/AetherEngine.h"
+#include "../../AetherEngine/Src/Logging/Logger.h"
 
 
 /// <summary>

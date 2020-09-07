@@ -7,6 +7,7 @@
 #include <thread>
 #include <list>
 
+#undef ERROR
 
 #ifdef _VULKAN
 #include <vulkan/vulkan.h>

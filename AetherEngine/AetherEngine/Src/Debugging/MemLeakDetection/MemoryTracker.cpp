@@ -1,6 +1,9 @@
 #define UNDEF_NEW_MACRO
-#include "src/Debugging/MemLeakDetection/MemoryTracker.h"
+#include "MemoryTracker.h"
 
+#ifdef _WIN32
+#define strncpy strncpy_s
+#endif
 
 bool memtrack::tracking = false;
 unsigned long memtrack::totalAllocatedMemorySize = 0;
@@ -28,11 +31,7 @@ void AddTrack(void* addr, unsigned long size, const char* file, unsigned int lin
 		info->addr = addr;
 #pragma warning(pop)
 		info->size = size;
-#if _WINDOWS
-		strncpy_s(info->file, file, 127);
-#else
 		strncpy(info->file, file, 127);
-#endif
 		info->line = line;
 
 		allocList.insert(allocList.begin(), info);
