@@ -1,3 +1,4 @@
+
 # AetherEngine
 General readme for various important things about the project.
 Please give this a read over before doing anything with the repo.
@@ -11,11 +12,11 @@ The branch name should have one of 3 prefixes:
 * `feature-`
 	* Used for smaller features that wouldn't really classify as a whole major module for the engine. Can either be a short description or point to an issueID like patches.
 
-The `master` branch is reserved for finished release versions.
-The `pre-build` branch is reserved as a "development" branch, in which finished branches merge into.
+The `master` branch is reserved for finished release versions.</br>
+The `pre-build` branch is reserved as a "development" branch, in which finished branches merge into.</br>
 For merging into `pre-build` or `master`, you should submit a pull request of your branch.
 
 ## Code Conventions
 ### <ins>Namespaces
-All of the code should be within the `Aeth` namespace (short for Aether).
+All of the code should be within the `Aeth` namespace (short for Aether).</br>
 The project is set up with a folder structure instead of using vcxproject filters. The namespaces should reflect the folders they are in. For example `src/Foo/Bar/Baz.cpp` should have all of its code in the `Aeth::Foo::Bar` namespace unless it is agreed that a certain section should be different.
