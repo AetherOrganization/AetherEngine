@@ -13,8 +13,7 @@ The branch name should have one of 3 prefixes:
 
 The `master` branch is reserved for finished release versions.
 The `pre-build` branch is reserved as a "development" branch, in which finished branches merge into.
-Before merging into `pre-build`, you should preferably consult the team.
-Before merging into master you should DEFINITELY consult the team.
+For merging into `pre-build` or `master`, you should submit a pull request of your branch.
 
 ## Code Conventions
 ### <ins>Namespaces
