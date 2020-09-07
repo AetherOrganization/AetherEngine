@@ -4,23 +4,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinuxLib", "LinuxLib\LinuxLib.vcxproj", "{EDB79AB6-C255-4939-AD2B-A21F910C233F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B56F77C-A014-4F40-80A3-5CA28839D206} = {5B56F77C-A014-4F40-80A3-5CA28839D206}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsLib", "WindowsLib\WindowsLib.vcxproj", "{C87FE794-09B4-4143-839B-68CEE95FF94C}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AetherEngine", "AetherEngine\AetherEngine.vcxitems", "{6319B2AB-5BFD-4BFA-BD22-2660B7B2F4D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B56F77C-A014-4F40-80A3-5CA28839D206} = {5B56F77C-A014-4F40-80A3-5CA28839D206}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsTest", "WindowsTest\WindowsTest.vcxproj", "{0FBBA255-ADF7-48AD-8809-A8B8A51B7A2F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B56F77C-A014-4F40-80A3-5CA28839D206} = {5B56F77C-A014-4F40-80A3-5CA28839D206}
+		{C87FE794-09B4-4143-839B-68CEE95FF94C} = {C87FE794-09B4-4143-839B-68CEE95FF94C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinuxTest", "LinuxTest\LinuxTest.vcxproj", "{A7771EEB-89FE-4D5D-B820-12D68231E0C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B56F77C-A014-4F40-80A3-5CA28839D206} = {5B56F77C-A014-4F40-80A3-5CA28839D206}
+		{EDB79AB6-C255-4939-AD2B-A21F910C233F} = {EDB79AB6-C255-4939-AD2B-A21F910C233F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AetherEngine", "AetherEngine\AetherEngine.vcxproj", "{5B56F77C-A014-4F40-80A3-5CA28839D206}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		AetherEngine\AetherEngine.vcxitems*{0fbba255-adf7-48ad-8809-a8b8a51b7a2f}*SharedItemsImports = 4
-		AetherEngine\AetherEngine.vcxitems*{6319b2ab-5bfd-4bfa-bd22-2660b7b2f4d1}*SharedItemsImports = 9
-		AetherEngine\AetherEngine.vcxitems*{a7771eeb-89fe-4d5d-b820-12d68231e0c4}*SharedItemsImports = 4
-		AetherEngine\AetherEngine.vcxitems*{c87fe794-09b4-4143-839b-68cee95ff94c}*SharedItemsImports = 4
-		AetherEngine\AetherEngine.vcxitems*{edb79ab6-c255-4939-ad2b-a21f910c233f}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
 		Debug|ARM64 = Debug|ARM64
@@ -147,6 +154,26 @@ Global
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|x86.ActiveCfg = Release|x86
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|x86.Build.0 = Release|x86
 		{A7771EEB-89FE-4D5D-B820-12D68231E0C4}.Release|x86.Deploy.0 = Release|x86
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|ARM.ActiveCfg = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|x64.ActiveCfg = Debug|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|x64.Build.0 = Debug|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|x86.ActiveCfg = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Debug|x86.Build.0 = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|ARM.ActiveCfg = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|ARM.Build.0 = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|ARM64.ActiveCfg = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|ARM64.Build.0 = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|x64.ActiveCfg = Debug|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|x64.Build.0 = Debug|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|x86.ActiveCfg = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.DebugMemLeak|x86.Build.0 = Debug|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|ARM.ActiveCfg = Release|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|ARM64.ActiveCfg = Release|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|x64.ActiveCfg = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|x64.Build.0 = Release|x64
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|x86.ActiveCfg = Release|Win32
+		{5B56F77C-A014-4F40-80A3-5CA28839D206}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

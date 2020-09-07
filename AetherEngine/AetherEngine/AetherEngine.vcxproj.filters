@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\Args\Args.cpp" />
+    <ClCompile Include="Src\Debugging\MemLeakDetection\MemoryTracker.cpp" />
+    <ClCompile Include="Src\Logging\Logger.cpp" />
+    <ClCompile Include="Src\NeTer\Connection.cpp" />
+    <ClCompile Include="Src\NeTer\Socket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Args\Args.h" />
+    <ClInclude Include="Src\Debugging\MemLeakDetection\MemoryTracker.h" />
+    <ClInclude Include="Src\Logging\Logger.h" />
+    <ClInclude Include="Src\NeTer\Connection.h" />
+    <ClInclude Include="Src\AetherEngine.h" />
+    <ClInclude Include="Src\NeTer\Socket.h" />
+  </ItemGroup>
+</Project>

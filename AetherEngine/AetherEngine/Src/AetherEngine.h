@@ -1,8 +1,8 @@
 #pragma once
 
-#include <Src/Logging/Logger.h>
-#include <Src/Debugging/MemLeakDetection/MemoryTracker.h>
-#include <Src/Args/Args.h>
+#include "../../AetherEngine/Src/Logging/Logger.h"
+#include "../../AetherEngine/Src/Debugging/MemLeakDetection/MemoryTracker.h"
+#include "../../AetherEngine/Src/Args/Args.h""
 
 
 /// <summary>
