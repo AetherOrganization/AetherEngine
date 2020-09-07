@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{287f8c5a-d8d3-452d-a90d-9f75723b7a6a}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\AetherEngine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\LeakScan\LeakScan.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Debugging\LeakScan\LeakScan.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
+  </ItemGroup>
+</Project>

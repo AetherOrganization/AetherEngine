@@ -348,3 +348,4 @@ healthchecksdb
 !/AetherEngine/#in/*/Bin
 
 !/**/DontGitIgnore.tmp
+/AetherEngine/#LibHeaders

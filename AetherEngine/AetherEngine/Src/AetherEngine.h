@@ -1,29 +1,30 @@
 #pragma once
 
-#include "../../AetherEngine/Src/Logging/Logger.h"
-#include "../../AetherEngine/Src/Debugging/MemLeakDetection/MemoryTracker.h"
-#include "../../AetherEngine/Src/Args/Args.h""
+#include "Logging/Logger.h"
+#include "Debugging/LeakScan/LeakScan.h"
+#include "Args/Args.h"
 
 
-/// <summary>
-/// Start AetherEngine. Must be called before anything else.
-/// </summary>
-/// <param name="argc"></param>
-/// <param name="argv"></param>
-void StartAetherEngine(int argc = 0, char* argv[] = {})
+namespace Aeth
 {
-	std::atexit(memtrack::DumpUnfreed);
+	/// <summary>
+	/// Start AetherEngine. Must be called before anything else.
+	/// </summary>
+	void StartAetherEngine(int argc = 0, char* argv[] = {})
+	{
+		std::atexit(Debugging::LeakScan::DumpUnfreed);
 
-	Args::AddKwargHint("--verbosity", "0");
-	Args::ProcessArgs(argc, argv);
+		Args::AddKwargHint("--verbosity", "0");
+		Args::ProcessArgs(argc, argv);
 
-	new Logger("Main", std::stoi(Args::GetKwarg("--verbosity")));
-}
+		new Logging::Logger("Main", std::stoi(Args::GetKwarg("--verbosity")));
+	}
 
-/// <summary>
-/// Stop AetherEngine. Should be the final call to the engine.
-/// </summary>
-void StopAetherEngine()
-{
-	delete Logger::instance;
+	/// <summary>
+	/// Stop AetherEngine. Should be the final call to the engine.
+	/// </summary>
+	void StopAetherEngine()
+	{
+		delete Logging::Logger::instance;
+	}
 }
