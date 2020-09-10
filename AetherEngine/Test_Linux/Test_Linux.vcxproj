@@ -79,6 +79,8 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LibraryDependencies>%(LibraryDependencies)</LibraryDependencies>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
@@ -95,6 +97,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
@@ -111,6 +114,8 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LibraryDependencies>pthread;%(LibraryDependencies)</LibraryDependencies>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
@@ -127,6 +132,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>

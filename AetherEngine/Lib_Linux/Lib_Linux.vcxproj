@@ -92,6 +92,7 @@
     <PostBuildEvent>
       <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -102,6 +103,7 @@
     <PostBuildEvent>
       <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <ClCompile>
@@ -112,6 +114,7 @@
     <PostBuildEvent>
       <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <ClCompile>
@@ -122,6 +125,7 @@
     <PostBuildEvent>
       <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
+    <Lib />
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
