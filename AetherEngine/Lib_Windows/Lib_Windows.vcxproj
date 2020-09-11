@@ -104,7 +104,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Windows\Include\x86;$(SolutionDir)#in\Lib_Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -113,14 +113,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Lib_Windows\Lib\x86;$(SolutionDir)#in\Lib_Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,7 +134,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Windows\Include\x86;$(SolutionDir)#in\Lib_Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -145,14 +145,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Lib_Windows\Lib\x86;$(SolutionDir)#in\Lib_Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -164,7 +164,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Windows\Include\x64;$(SolutionDir)#in\Lib_Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -173,10 +173,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Lib_Windows\Lib\x64;$(SolutionDir)#in\Lib_Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -194,7 +194,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Windows\Include\x64;$(SolutionDir)#in\Lib_Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -205,10 +205,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Lib_Windows\Lib\x64;$(SolutionDir)#in\Lib_Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>

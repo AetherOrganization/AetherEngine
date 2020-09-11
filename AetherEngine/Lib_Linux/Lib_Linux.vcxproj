@@ -85,45 +85,45 @@
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include\x64;$(SolutionDir)#in\Lib_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++17</CppLanguageStandard>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include\x64;$(SolutionDir)#in\Lib_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++17</CppLanguageStandard>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include\x86;$(SolutionDir)#in\Lib_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++17</CppLanguageStandard>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Lib_Linux\Include\x86;$(SolutionDir)#in\Lib_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++17</CppLanguageStandard>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <PostBuildEvent>
-      <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
+      <Command>call ../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
     </PostBuildEvent>
     <Lib />
   </ItemDefinitionGroup>
