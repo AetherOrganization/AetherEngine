@@ -5,6 +5,8 @@ REM %3 : File extension to copy
 robocopy "%1" "%2" *.%3 /IT /IM
 if %ERRORLEVEL% GEQ 8 goto failed
 
-exit 0
+goto eof
 :failed
 exit %ERRORLEVEL%
+
+:eof

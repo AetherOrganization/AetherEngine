@@ -12,6 +12,8 @@ if defined condition (
 robocopy "%1" "%2" *.h /IT /IM /S
 if %ERRORLEVEL% GEQ 8 goto failed
 
-exit 0
+goto eof
 :failed
 exit %ERRORLEVEL%
+
+:eof

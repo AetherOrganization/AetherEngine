@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Logging/Logger.h"
-#include "Debugging/LeakScan/LeakScan.h"
 #include "Args/Args.h"
 
 
@@ -12,12 +11,10 @@ namespace Aeth
 	/// </summary>
 	void StartAetherEngine(int argc = 0, char* argv[] = {})
 	{
-		std::atexit(Debugging::LeakScan::DumpUnfreed);
-
 		Args::AddKwargHint("--verbosity", "0");
 		Args::ProcessArgs(argc, argv);
 
-		new Logging::Logger("Main", std::stoi(Args::GetKwarg("--verbosity")));
+		new Logging::Logger("log.txt", "Main", (uint8_t)std::stoi(Args::GetKwarg("--verbosity")));
 	}
 
 	/// <summary>
@@ -25,6 +22,7 @@ namespace Aeth
 	/// </summary>
 	void StopAetherEngine()
 	{
-		delete Logging::Logger::instance;
+		Args::Cleanup();
+		Logging::Logger::Destruct();
 	}
 }

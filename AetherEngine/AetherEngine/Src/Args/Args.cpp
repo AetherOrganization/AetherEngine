@@ -34,4 +34,10 @@ namespace Aeth::Args
 	{
 		return kwargs[arg];
 	}
+
+	void Cleanup()
+	{
+		args.clear();
+		kwargs.clear();
+	}
 }

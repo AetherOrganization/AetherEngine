@@ -33,4 +33,9 @@ namespace Aeth::Args
 	/// <param name="arg">keyword to look for.</param>
 	/// <returns>The value of the kwarg or the default value otherwise</returns>
 	std::string GetKwarg(std::string arg);
+
+	/// <summary>
+	/// Clean up memory. Should be called at the end of the program.
+	/// </summary>
+	void Cleanup();
 }

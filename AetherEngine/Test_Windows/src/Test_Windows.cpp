@@ -1,6 +1,3 @@
-#include <iostream>
-#include <filesystem>
-
 #include "src/AetherEngine.h"
 #include "src/Logging/Logger.h"
 
@@ -10,15 +7,12 @@
 /// </summary>
 void TestStart()
 {
-
+	
 }
 
 
 int main(int argc, char* argv[])
 {
-#if _MEMLEAK
-	memtrack::tracking = true;
-#endif
 	Aeth::StartAetherEngine(argc, argv);
 
 	TestStart();
