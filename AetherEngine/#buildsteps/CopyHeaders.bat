@@ -17,3 +17,4 @@ goto eof
 exit %ERRORLEVEL%
 
 :eof
+exit /B 0

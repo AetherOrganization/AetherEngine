@@ -79,7 +79,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x64;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <LibraryDependencies>%(LibraryDependencies)</LibraryDependencies>
+      <LibraryDependencies>SDL2</LibraryDependencies>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
@@ -99,6 +99,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\Agn\\ $(OutDir)
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x64;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
+      <LibraryDependencies>SDL2</LibraryDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
@@ -116,7 +117,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\Agn\\ $(OutDir)
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x86;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <LibraryDependencies>pthread;%(LibraryDependencies)</LibraryDependencies>
+      <LibraryDependencies>SDL2</LibraryDependencies>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
@@ -136,6 +137,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows)\Bin\Agn\\ $(OutD
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x86;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
+      <LibraryDependencies>SDL2</LibraryDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
