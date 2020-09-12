@@ -69,12 +69,18 @@ namespace Aeth::Window
 		/// <param name="_id">ID of the window to stop.</param>
 		static void StopWindow(uint32_t _id);
 
+		/// <summary>
+		/// Starts SDL. Needs to be called before creating any windows.
+		/// </summary>
 		static void StartSDL()
 		{
 			if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0)
 				Logging::Logger::Log("SDL Error: " + std::string(SDL_GetError()), Logging::Logger::EXCEPTION);
 		}
 
+		/// <summary>
+		/// Stops SDL. All windows should be destroyed before calling this.
+		/// </summary>
 		static void StopSDL()
 		{
 			SDL_Quit();
