@@ -73,12 +73,12 @@
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Test_Linux\Include\x64;$(SolutionDir)#in\Test_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Linux\Include\x64;$(SolutionDir)#in\Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib\x64;$(SolutionDir)#in\Test_Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x64;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LibraryDependencies>%(LibraryDependencies)</LibraryDependencies>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -86,36 +86,36 @@
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\x64\\ $(OutDir)\ so
-call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\Agn\\ $(OutDir)\ so</Command>
+      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\x64\\ $(OutDir)\ so
+call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\Agn\\ $(OutDir)\ so</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Test_Linux\Include\x64;$(SolutionDir)#in\Test_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Linux\Include\x64;$(SolutionDir)#in\Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib\x64;$(SolutionDir)#in\Test_Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x64;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\x64\\ $(OutDir)\ so
-call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\Agn\\ $(OutDir)\ so</Command>
+      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\x64\\ $(OutDir)\ so
+call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Linux\Bin\Agn\\ $(OutDir)\ so</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Test_Linux\Include\x86;$(SolutionDir)#in\Test_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Linux\Include\x86;$(SolutionDir)#in\Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib\x86;$(SolutionDir)#in\Test_Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x86;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LibraryDependencies>pthread;%(LibraryDependencies)</LibraryDependencies>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -123,26 +123,26 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\Agn\\ 
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\x86\\ $(OutDir)\ so
-call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\Agn\\ $(OutDir)\ so</Command>
+      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\x86\\ $(OutDir)\ so
+call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows)\Bin\Agn\\ $(OutDir)\ so</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)#in\Test_Linux\Include\x86;$(SolutionDir)#in\Test_Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)#in\Linux\Include\x86;$(SolutionDir)#in\Linux\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)#in\Test_Linux\Lib\x86;$(SolutionDir)#in\Test_Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)#in\Linux\Lib\x86;$(SolutionDir)#in\Linux\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(DebuggerWorkingDirectory)\</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\x86\\ $(OutDir)\ so
-call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\$(ProjectName)\Bin\Agn\\ $(OutDir)\ so</Command>
+      <Command>call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\x86\\ $(OutDir)\ so
+call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows)\Bin\Agn\\ $(OutDir)\ so</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
