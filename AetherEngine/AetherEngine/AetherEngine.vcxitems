@@ -20,11 +20,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Utils\StlExtensions\SharedQueue.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Window\Window.cpp" />
   </ItemGroup>
 </Project>

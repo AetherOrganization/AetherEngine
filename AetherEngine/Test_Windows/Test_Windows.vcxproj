@@ -103,6 +103,7 @@
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +133,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -161,6 +163,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -190,6 +193,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

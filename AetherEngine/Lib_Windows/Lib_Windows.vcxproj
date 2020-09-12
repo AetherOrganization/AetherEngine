@@ -106,6 +106,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)#in\Windows\Include\x86;$(SolutionDir)#in\Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -136,6 +137,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)#in\Windows\Include\x86;$(SolutionDir)#in\Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -166,6 +168,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)#in\Windows\Include\x64;$(SolutionDir)#in\Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -196,6 +199,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)#in\Windows\Include\x64;$(SolutionDir)#in\Windows\Include\Agn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>
