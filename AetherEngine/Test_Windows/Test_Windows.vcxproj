@@ -103,12 +103,13 @@
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Windows\Lib\x86;$(SolutionDir)#in\Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(LocalDebuggerWorkingDirectory)\</Command>
@@ -132,6 +133,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +141,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Windows\Lib\x86;$(SolutionDir)#in\Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(LocalDebuggerWorkingDirectory)\</Command>
@@ -161,12 +163,13 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Windows\Lib\x64;$(SolutionDir)#in\Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(LocalDebuggerWorkingDirectory)\</Command>
@@ -190,6 +193,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <StringPooling>true</StringPooling>
       <MinimalRebuild>
       </MinimalRebuild>
+      <DisableSpecificWarnings>26812;26819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -197,7 +201,7 @@ call ../#buildsteps/CopyBinaries.bat $(SolutionDir)#in\Windows\Bin\Agn\\ $(OutDi
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)#in\Windows\Lib\x64;$(SolutionDir)#in\Windows\Lib\Agn;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>call ../#buildsteps/MakeWD.bat $(LocalDebuggerWorkingDirectory)\</Command>

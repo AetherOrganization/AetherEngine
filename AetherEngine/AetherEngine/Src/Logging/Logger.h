@@ -241,7 +241,10 @@ namespace Aeth::Logging
 			Logger::inputStream.flush();
 			Log(Logger::inputStream.str(), streamTag);
 			Logger::inputStream.str("");
+#pragma warning(push)
+#pragma warning(disable: 26110)
 			streamMutex.unlock();
+#pragma warning(pop)
 		}
 
 		template<class T>

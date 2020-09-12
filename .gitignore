@@ -342,10 +342,8 @@ healthchecksdb
 /AetherEngine/**/DebugMemLeak
 
 
-/AetherEngine/#in/Import/#RawInclude
 /**/log.txt
 
-!/AetherEngine/#in/*/Bin
-
-!/**/DontGitIgnore.tmp
+!/**/DontGitIgnore
 /AetherEngine/#LibHeaders
+!/AetherEngine/#in/**
