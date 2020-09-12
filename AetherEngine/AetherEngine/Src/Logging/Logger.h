@@ -1,4 +1,5 @@
 #pragma once
+#include "Src/Common/CrossPlatform.h"
 
 #include <unordered_map>
 #include <mutex>
@@ -11,10 +12,10 @@
 #include <fstream>
 #include <sstream>
 
-#ifdef _WIN32
+#ifdef AETH_WINDOWS
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
-#endif // _WIN32
+#endif // AETH_WINDOWS
 
 #include "Src/Utils/StlExtensions/SharedQueue.h"
 
@@ -44,7 +45,7 @@ namespace Aeth::Logging
 			DEBUG
 		};
 
-#ifdef _WIN32
+#ifdef AETH_WINDOWS
 		enum LoggerColors
 		{
 			COLOR_BLACK = 0,
@@ -64,7 +65,7 @@ namespace Aeth::Logging
 			COLOR_BRIGHT_YELLOW = 14,
 			COLOR_BRIGHT_WHITE = 15
 		};
-#elif __unix__
+#elif AETH_UNIX
 		enum LoggerColors
 		{
 			COLOR_BLACK = 30,
@@ -84,7 +85,7 @@ namespace Aeth::Logging
 			COLOR_BRIGHT_YELLOW = 93,
 			COLOR_BRIGHT_WHITE = 97
 		};
-#endif // _WIN32 or __unix__
+#endif // AETH_WINDOWS || AETH_LINUX
 
 	private: // private types
 		struct TagData
@@ -184,11 +185,11 @@ namespace Aeth::Logging
 				_tagName,
 				_tagSeverity,
 				(uint8_t)_tagForeground,
-#ifdef _WIN32
+#ifdef AETH_WINDOWS
 				(uint8_t)((uint32_t)_tagBackground << 4),
-#elif __unix__
+#elif AETH_UNIX
 				(uint8_t)((uint32_t)_tagBackground + (uint32_t)10),
-#endif // _WIN32 or __unix__
+#endif // AETH_WINDOWS || AETH_UNIX
 				_file
 			};
 			return true;
@@ -262,7 +263,7 @@ namespace Aeth::Logging
 
 		static void PrintToConsole(std::string _s, uint8_t foreground, uint8_t background)
 		{
-#ifdef _WIN32
+#ifdef AETH_WINDOWS
 			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 			SetConsoleTextAttribute(hConsole, foreground | background);
 
@@ -271,29 +272,29 @@ namespace Aeth::Logging
 			SetConsoleTextAttribute(hConsole, 7);
 
 			printf("\n");
-#elif __unix__
+#elif AETH_UNIX
 			_s = "\033[" + std::to_string(foreground) + ";" + std::to_string(background) + "m" + _s + "\033[0m\n";
 			printf(_s.data());
-#endif // _WIN32 or __unix__
+#endif // AETH_WINDOWS || AETH_UNIX
 		}
 
 		static std::string GetTimestamp()
 		{
 			char charBuffer[128];
 
-#ifdef _WIN32
+#ifdef AETH_WINDOWS
 			time_t rawTime;
 			struct tm* timeInfo = new tm();
 			time(&rawTime);
 			localtime_s(timeInfo, &rawTime);
 			strftime(charBuffer, sizeof(charBuffer), "%j_%H:%M:%S", timeInfo);
 			delete timeInfo;
-#elif __unix__
+#elif AETH_UNIX
 			time_t rawTime;
 			time(&rawTime);
 			struct tm* timeInfo = localtime(&rawTime);
 			strftime(charBuffer, sizeof(charBuffer), "%j_%H:%M:%S", timeInfo);
-#endif // _WIN32 or __unix__
+#endif // AETH_WINDOWS || AETH_UNIX
 
 			return charBuffer;
 		}

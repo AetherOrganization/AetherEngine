@@ -16,6 +16,8 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\AetherEngine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Common\CrossPlatform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MiniDump.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />
@@ -23,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Debugging\MiniDump.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
