@@ -205,7 +205,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\thoma\Desktop\Projects\Aether_And_EtherWorld\Aether\AetherEngine\#in\Lib_Windows\Lib;Ws2_32.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
       <Command>../#buildsteps/CopyHeaders.bat $(SolutionDir)AetherEngine\src\\ $(SolutionDir)#LibHeaders\\ 1</Command>
