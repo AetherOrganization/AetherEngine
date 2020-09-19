@@ -18,14 +18,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\LeakScan\LeakScan.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Networking\Client\Client.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Networking\Server\Server.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Networking\SocketLayer\SocketLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Debugging\LeakScan\LeakScan.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Networking\Client\Windows\Client.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Networking\Server\Windows\Server.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Networking\SocketLayer\Windows\SocketLayer.cpp" />
   </ItemGroup>
 </Project>
