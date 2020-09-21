@@ -18,5 +18,4 @@ For merging into `pre-build` or `master`, you should submit a pull request of yo
 
 ## Code Conventions
 ### <ins>Namespaces
-All of the code should be within the `Aeth` namespace (short for Aether).</br>
-The project is set up with a folder structure instead of using vcxproject filters. The namespaces should reflect the folders they are in. For example `src/Foo/Bar/Baz.cpp` should have all of its code in the `Aeth::Foo::Bar` namespace unless it is agreed that a certain section should be different.
+All of the code should be within the `Aeth` namespace (short for Aether) however try to be reasonable and create sub-namespaces for different parts of the code (for example the ECS framework code shuld be in `Aeth::Ecs`
