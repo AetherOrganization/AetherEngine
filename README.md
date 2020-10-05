@@ -13,9 +13,9 @@ The branch name should have one of 3 prefixes:
 	* Used for smaller features that wouldn't really classify as a whole major module for the engine. Can either be a short description or point to an issueID like patches.
 
 The `master` branch is reserved for finished release versions.</br>
-The `pre-build` branch is reserved as a "development" branch, in which finished branches merge into.</br>
-For merging into `pre-build` or `master`, you should submit a pull request of your branch.
+The `dev` branch is reserved as a "development" branch, in which finished branches merge into.</br>
+For merging into `dev` or `master`, you should submit a pull request of your branch.
 
 ## Code Conventions
 ### <ins>Namespaces
-All of the code should be within the `Aeth` namespace (short for Aether) however try to be reasonable and create sub-namespaces for different parts of the code (for example the ECS framework code shuld be in `Aeth::Ecs`
+All of the code should be within the `aeth` namespace (short for Aether) however try to be reasonable and create sub-namespaces for different parts of the code (for example the profiler framework code should be in `aeth::profiler`
