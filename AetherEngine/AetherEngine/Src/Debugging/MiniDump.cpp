@@ -8,7 +8,7 @@
 #include <strsafe.h>
 #include <minidumpapiset.h>
 
-namespace Aeth::Debugging {
+namespace aeth::Debugging {
     int HandleCrash() {
         BOOL bMiniDumpSuccessful;
         WCHAR szPath[MAX_PATH];

@@ -5,7 +5,7 @@
 
 #undef ERROR
 
-namespace Aeth::Logging
+namespace aeth::Logging
 {
 #pragma region Static Decleration
 	Logger* Logger::instance;

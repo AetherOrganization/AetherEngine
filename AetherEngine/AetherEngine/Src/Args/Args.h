@@ -4,7 +4,7 @@
 #include <unordered_map>
 
 
-namespace Aeth::Args
+namespace aeth::Args
 {
 	/// <summary>
 	/// Adds a possible kwarg option.

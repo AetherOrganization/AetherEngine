@@ -18,6 +18,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Common\CrossPlatform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MiniDump.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\Profiling\SectionTimer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.h" />

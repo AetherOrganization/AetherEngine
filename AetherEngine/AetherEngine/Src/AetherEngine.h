@@ -1,14 +1,16 @@
 #pragma once
 
+#define SDL_MAIN_HANDLED
+
 #include <chrono>
 #include <thread>
 
-#include "Logging/Logger.h"
-#include "Args/Args.h"
+#include "Src/Logging/Logger.h"
+#include "Src/Args/Args.h"
 #include "Src/Window/Window.h"
 
 
-namespace Aeth
+namespace aeth
 {
 	namespace // "Invisible" members of the namespace. Can only be accessed from this file.
 	{
