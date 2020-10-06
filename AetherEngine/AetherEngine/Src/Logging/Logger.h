@@ -65,7 +65,7 @@ namespace Aeth::Logging
 			COLOR_BRIGHT_YELLOW = 14,
 			COLOR_BRIGHT_WHITE = 15
 		};
-#elif AETH_UNIX
+#elif defined(AETH_UNIX)
 		enum LoggerColors
 		{
 			COLOR_BLACK = 30,
@@ -187,7 +187,7 @@ namespace Aeth::Logging
 				(uint8_t)_tagForeground,
 #ifdef AETH_WINDOWS
 				(uint8_t)((uint32_t)_tagBackground << 4),
-#elif AETH_UNIX
+#elif defined(AETH_UNIX)
 				(uint8_t)((uint32_t)_tagBackground + (uint32_t)10),
 #endif // AETH_WINDOWS || AETH_UNIX
 				_file
@@ -275,7 +275,7 @@ namespace Aeth::Logging
 			SetConsoleTextAttribute(hConsole, 7);
 
 			printf("\n");
-#elif AETH_UNIX
+#elif defined(AETH_UNIX)
 			_s = "\033[" + std::to_string(foreground) + ";" + std::to_string(background) + "m" + _s + "\033[0m\n";
 			printf(_s.data());
 #endif // AETH_WINDOWS || AETH_UNIX
@@ -292,7 +292,7 @@ namespace Aeth::Logging
 			localtime_s(timeInfo, &rawTime);
 			strftime(charBuffer, sizeof(charBuffer), "%j_%H:%M:%S", timeInfo);
 			delete timeInfo;
-#elif AETH_UNIX
+#elif defined(AETH_UNIX)
 			time_t rawTime;
 			time(&rawTime);
 			struct tm* timeInfo = localtime(&rawTime);

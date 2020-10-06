@@ -9,7 +9,8 @@
 #include <minidumpapiset.h>
 
 namespace Aeth::Debugging {
-    int HandleCrash() {
+    // NOTE: There is a linker error in this function stopping the program from being built. MiniDumpWriteDump is unresolved.
+    /*int HandleCrash() {
         BOOL bMiniDumpSuccessful;
         WCHAR szPath[MAX_PATH];
         WCHAR szFileName[MAX_PATH];
@@ -41,6 +42,12 @@ namespace Aeth::Debugging {
             hDumpFile, MiniDumpWithDataSegs, &ExpParam, NULL, NULL);
 
         return EXCEPTION_EXECUTE_HANDLER;
+    }*/
+}
+#else
+namespace Aeth::Debugging {
+    int HandleCrash() {
+
     }
 }
 #endif
