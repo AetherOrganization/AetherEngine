@@ -1,7 +1,7 @@
 #include "Args.h"
 
 
-namespace Aeth::Args
+namespace aeth::Args
 {
 	std::unordered_set<std::string> args;
 	std::unordered_map<std::string, std::string> kwargs;

@@ -13,11 +13,11 @@ void TestStart()
 
 int main(int argc, char* argv[])
 {
-	Aeth::StartAetherEngine(argc, argv);
+	aeth::StartAetherEngine(argc, argv);
 
 	TestStart();
 
-	Aeth::StopAetherEngine();
+	aeth::StopAetherEngine();
 
 	return 0;
 }
