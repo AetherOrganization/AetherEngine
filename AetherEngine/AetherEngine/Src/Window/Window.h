@@ -9,7 +9,7 @@
 #include "Src/Logging/Logger.h"
 
 
-namespace Aeth::Window
+namespace aeth::Window
 {
 	typedef uint32_t WindowID;
 

@@ -8,6 +8,7 @@
 #include "Src/Logging/Logger.h"
 #include "Src/Args/Args.h"
 #include "Src/Window/Window.h"
+#include "Src/Ecs/RunSystems.h"
 
 
 namespace aeth
@@ -16,7 +17,7 @@ namespace aeth
 	{
 		bool programRunning = false;
 
-		std::chrono::steady_clock::time_point nextFrameTime; // HACK: Just a temporary "next frame" time for a basic loop. There would eventually be various loops running at different rates.
+		std::chrono::steady_clock::time_point nextFrameTime; // HACK: Just a temporary "next frame" time for a basic loop. There would eventually be a proper threaded dispatcher.
 	}
 
 	struct AetherEngineConfig
@@ -59,12 +60,11 @@ namespace aeth
 		Logging::Logger::Destruct();
 		Args::Cleanup();
 	}
-	
+
 	/// <summary>
 	/// Start the main engine loop. This should be called once all of your setup has been done.
 	/// </summary>
-	// HACK: callbk is only used while there is no good infrastructure. Remove when possible
-	void StartMainLoop(void(*callbk)())
+	void StartMainLoop()
 	{
 		nextFrameTime = std::chrono::steady_clock::now();
 
@@ -75,7 +75,7 @@ namespace aeth
 
 			Window::Window::UpdateEvents();
 
-			callbk();
+			aeth::ecs::RunSystems();
 		}
 	}
 }

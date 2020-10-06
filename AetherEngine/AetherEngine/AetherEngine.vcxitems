@@ -18,6 +18,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Args\Args.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Common\CrossPlatform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\MiniDump.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Ecs\EntitySystemProto.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Src\Ecs\RunSystems.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Debugging\Profiling\SectionTimer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.h" />
@@ -28,6 +30,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Args\Args.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Debugging\MiniDump.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Src\Ecs\EntitySystemProto.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\Logging\Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Connection.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Src\NeTer\Socket.cpp" />
