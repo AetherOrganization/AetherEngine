@@ -5,6 +5,6 @@
 
 #include "src/Common/CrossPlatform.h"
 
-namespace Aeth::Debugging {
+namespace aeth::Debugging {
 	int HandleCrash();
 }

@@ -1,7 +1,7 @@
 #include "Window.h"
 
 
-namespace Aeth::Window
+namespace aeth::Window
 {
 	WindowID mainWindow;
 

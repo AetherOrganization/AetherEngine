@@ -8,7 +8,7 @@
 #include <strsafe.h>
 #include <minidumpapiset.h>
 
-namespace Aeth::Debugging {
+namespace aeth::Debugging {
     // NOTE: There is a linker error in this function stopping the program from being built. MiniDumpWriteDump is unresolved.
     /*int HandleCrash() {
         BOOL bMiniDumpSuccessful;

@@ -33,16 +33,16 @@ void TestShutdown()
 
 int main(int argc, char* argv[])
 {
-	Aeth::AetherEngineConfig config{};
+	aeth::AetherEngineConfig config{};
 	config.appName = "Test_Windows";
 
-	Aeth::StartAetherEngine(argc, argv, config);
+	aeth::StartAetherEngine(argc, argv, config);
 	TestStartup();
 
-	Aeth::StartMainLoop();
+	aeth::StartMainLoop();
 
 	TestShutdown();
-	Aeth::StopAetherEngine();
+	aeth::StopAetherEngine();
 
 	return 0;
 }

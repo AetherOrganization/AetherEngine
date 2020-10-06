@@ -22,7 +22,7 @@
 #undef ERROR
 
 
-namespace Aeth::Logging
+namespace aeth::Logging
 {
 	/// <summary>
 	/// Singleton logger class, inteded to replace print functions like std::cout and printf. Adds extra features ontop of regular console logging including logging to a log file.
