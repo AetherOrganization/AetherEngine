@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <chrono>
+#include <atomic>
 
 
 namespace aeth
@@ -35,7 +36,7 @@ namespace aeth
 	class UpdateDispatcher
 	{
 	private:
-		static bool programRunning;
+		static std::atomic<bool> programRunning;
 
 	public:
 		static UpdateCycleIntern::UpdateFrequencies frequencies;

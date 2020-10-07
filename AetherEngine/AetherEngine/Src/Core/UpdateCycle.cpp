@@ -12,7 +12,7 @@
 
 namespace aeth
 {
-	bool UpdateDispatcher::programRunning = false;
+	std::atomic<bool> UpdateDispatcher::programRunning = false;
 
 	UpdateCycleIntern::UpdateFrequencies UpdateDispatcher::frequencies = { 60, 40 };
 	UpdateCycleIntern::UpdateModes UpdateDispatcher::modes = { false, true };
