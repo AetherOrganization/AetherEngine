@@ -68,8 +68,8 @@ namespace aeth
 
 				window::Window::UpdateEvents();
 
-				/*
-				while (currentTime >= timepoints.render)
+				
+				while (currentTime >= timepoints.render - std::chrono::microseconds(100)) // we need to add some leve of rougness to the timing checks as the cycle loop isn't perfectly precise
 				{
 					if (modes.renderFixed)
 					{
@@ -91,29 +91,9 @@ namespace aeth
 						timepoints.render = currentTime + std::chrono::nanoseconds(1000000000 / frequencies.render);
 						break;
 					}
-				}
-				*/
-				if (modes.renderFixed)
-				{
+				}	
 
-				}
-				else
-				{
-					if (currentTime >= timepoints.render)
-					{
-						deltaTime = GetDeltaTime(currentTime, timepoints.render_last);
-
-						ecs::RunSystems_PreRender(deltaTime);
-						ecs::RunSystems_Render(deltaTime);
-						ecs::RunSystems_PostRender(deltaTime);
-
-						timepoints.render_last = currentTime;
-						timepoints.render = currentTime + timerIncrement * (cycleFrequency / frequencies.render);
-					}
-				}
-				
-
-				while (currentTime >= timepoints.physics)
+				while (currentTime >= timepoints.physics - std::chrono::microseconds(100))
 				{
 					if (modes.physicsFixed)
 					{

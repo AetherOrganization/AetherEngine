@@ -44,7 +44,7 @@ public:
 		{
 			value += rollingAverage[i];
 		}
-		Logger::Lock(Logger::DEBUG) << "Test: " << value / 30 << Logger::endl;
+		Logger::Lock(Logger::DEBUG) << "Test: " << deltaTime << Logger::endl;
 	}
 };
 IMPLEMENT_SYSTEM_PROTO(TestSystem);
