@@ -1,7 +1,7 @@
 #include "Window.h"
 
 
-namespace aeth::Window
+namespace aeth::window
 {
 	WindowID mainWindow;
 
@@ -24,7 +24,7 @@ namespace aeth::Window
 	{
 		if (!InstanceExists(_id))
 		{
-			Logging::Logger::Log("Attempted to shutdown non-existant window (ID not found).", Logging::Logger::WARNING);
+			logging::Logger::Log("Attempted to shutdown non-existant window (ID not found).", logging::Logger::WARNING);
 			return;
 		}
 		delete instanceMap[_id];

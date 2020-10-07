@@ -1,6 +1,6 @@
 #include "Src/AetherEngine.h"
-#include "Src/Logging/Logger.h"
-#include "Src/Ecs/EntitySystemProto.h"
+#include "Src/Core/Logging/Logger.h"
+#include "Src/Core/Ecs/EntitySystemProto.h"
 
 
 // Start the test from these 3 functions, not from main(). Once you merge to dev, please remove any test code and files. Thank you :)
@@ -12,17 +12,12 @@ void TestStartup()
 
 class TestSystem : aeth::ecs::EntitySystemProto
 {
-private:
-	static aeth::ecs::EntitySystemProto* proto;
-
+	DEFINE_SYSTEM_PROTO(TestSystem);
 
 public:
-	void TestUpdate()
-	{
 
-	}
 };
-aeth::ecs::EntitySystemProto* TestSystem::proto = aeth::ecs::EntitySystemProto::AddPrototype(new TestSystem());
+IMPLEMENT_SYSTEM_PROTO(TestSystem);
 
 void TestShutdown()
 {
