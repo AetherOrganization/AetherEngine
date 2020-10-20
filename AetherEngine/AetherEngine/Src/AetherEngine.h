@@ -5,21 +5,11 @@
 #include <chrono>
 #include <thread>
 
-#include "Src/Logging/Logger.h"
-#include "Src/Args/Args.h"
-#include "Src/Window/Window.h"
-#include "Src/Ecs/RunSystems.h"
+#include "Src/Core/Window/Window.h"
 
 
 namespace aeth
 {
-	namespace // "Invisible" members of the namespace. Can only be accessed from this file.
-	{
-		bool programRunning = false;
-
-		std::chrono::steady_clock::time_point nextFrameTime; // HACK: Just a temporary "next frame" time for a basic loop. There would eventually be a proper threaded dispatcher.
-	}
-
 	struct AetherEngineConfig
 	{
 		std::string appName = "";
@@ -35,47 +25,15 @@ namespace aeth
 	/// <summary>
 	/// Start AetherEngine. Must be called before anything else.
 	/// </summary>
-	void StartAetherEngine(int argc, char* argv[], AetherEngineConfig& _config)
-	{
-		programRunning = true;
-
-		Args::AddKwargHint("--verbosity", "0");
-		Args::ProcessArgs(argc, argv);
-
-		new Logging::Logger("log.txt", "Main", (uint8_t)std::stoi(Args::GetKwarg("--verbosity")));
-
-		Window::Window::StartSDL();
-		Window::mainWindow = Window::Window::StartWindow(_config.appName.data(), _config.mainWindow_XPos, _config.mainWindow_YPos, _config.mainWindow_XSize, _config.mainWindow_YSize, _config.mainWindow_Flags, []() {
-			programRunning = false; });
-	}
+	void StartAetherEngine(int argc, char* argv[], AetherEngineConfig& _config);
 
 	/// <summary>
 	/// Stop AetherEngine. Should be the final call to the engine.
 	/// </summary>
-	void StopAetherEngine()
-	{
-		Window::Window::StopWindow(Window::mainWindow);
-		Window::Window::StopSDL();
-		
-		Logging::Logger::Destruct();
-		Args::Cleanup();
-	}
+	void StopAetherEngine();
 
 	/// <summary>
 	/// Start the main engine loop. This should be called once all of your setup has been done.
 	/// </summary>
-	void StartMainLoop()
-	{
-		nextFrameTime = std::chrono::steady_clock::now();
-
-		while (programRunning)
-		{
-			std::this_thread::sleep_until(nextFrameTime);
-			nextFrameTime = std::chrono::steady_clock::now() + std::chrono::microseconds(1000000 / 60); // 60 fps.
-
-			Window::Window::UpdateEvents();
-
-			aeth::ecs::RunSystems();
-		}
-	}
+	void StartMainLoop();
 }

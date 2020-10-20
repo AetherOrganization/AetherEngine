@@ -6,10 +6,10 @@
 
 #include <SDL2/SDL.h>
 
-#include "Src/Logging/Logger.h"
+#include "Src/Core/Logging/Logger.h"
 
 
-namespace aeth::Window
+namespace aeth::window
 {
 	typedef uint32_t WindowID;
 
@@ -30,7 +30,7 @@ namespace aeth::Window
 		/// <returns>Instance of the given ID.</returns>
 		static Window* GetInstance(WindowID _id) {
 			if (!InstanceExists(_id))
-				Logging::Logger::Log("Invalid Window ID.", Logging::Logger::EXCEPTION);
+				logging::Logger::Log("Invalid Window ID.", logging::Logger::EXCEPTION);
 			return instanceMap[_id];
 		}
 
@@ -75,7 +75,7 @@ namespace aeth::Window
 		static void StartSDL()
 		{
 			if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0)
-				Logging::Logger::Log("SDL Error: " + std::string(SDL_GetError()), Logging::Logger::EXCEPTION);
+				logging::Logger::Log("SDL Error: " + std::string(SDL_GetError()), logging::Logger::EXCEPTION);
 		}
 
 		/// <summary>
